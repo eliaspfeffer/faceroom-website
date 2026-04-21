@@ -495,95 +495,17 @@ export default function Page() {
             </em>
           </h1>
 
-          {/* Subheadline */}
-          <p
-            style={{
-              fontSize: 18,
-              color: "var(--text-secondary)",
-              lineHeight: 1.65,
-              maxWidth: 520,
-              margin: "0 auto 48px",
-              fontWeight: 300,
-              opacity: heroReady ? 1 : 0,
-              transform: heroReady ? "translateY(0)" : "translateY(20px)",
-              transition: "opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1)",
-              transitionDelay: "0.35s",
-            }}
-          >
-            A floating strip of live video in the corner of your screen.
-            One tile per person. Hold the mic to talk. No accounts, no calls
-            to start — just open it.
-          </p>
-
-          {/* Buttons */}
-          <div
-            style={{
-              display: "flex",
-              flexWrap: "wrap",
-              gap: 12,
-              justifyContent: "center",
-              marginBottom: 80,
-              opacity: heroReady ? 1 : 0,
-              transform: heroReady ? "translateY(0)" : "translateY(16px)",
-              transition: "opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1)",
-              transitionDelay: "0.5s",
-            }}
-          >
-            <a
-              href="https://github.com/eliaspfeffer/faceroom/releases/latest/download/Faceroom.zip"
-              className="btn-primary"
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              Download for Mac
-            </a>
-            <a
-              href="https://github.com/eliaspfeffer/faceroom-electron/releases/latest"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-secondary"
-              style={{ cursor: "pointer" }}
-            >
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
-              </svg>
-              <span>Download for Windows</span>
-            </a>
-          </div>
-
           {/* Screenshot preview */}
           <div
             className="bar-float"
             style={{
               display: "flex",
               justifyContent: "center",
+              marginBottom: 48,
               opacity: heroReady ? 1 : 0,
               transform: heroReady ? "translateY(0)" : "translateY(30px)",
               transition: "opacity 1s ease, transform 1s cubic-bezier(0.16,1,0.3,1)",
-              transitionDelay: "0.7s",
+              transitionDelay: "0.35s",
             }}
           >
             <div
@@ -623,6 +545,66 @@ export default function Page() {
                 }}
               />
             </div>
+          </div>
+
+          {/* Subheadline */}
+          <p
+            style={{
+              fontSize: 18,
+              color: "var(--text-secondary)",
+              lineHeight: 1.65,
+              maxWidth: 520,
+              margin: "0 auto 40px",
+              fontWeight: 300,
+              opacity: heroReady ? 1 : 0,
+              transform: heroReady ? "translateY(0)" : "translateY(20px)",
+              transition: "opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1)",
+              transitionDelay: "0.55s",
+            }}
+          >
+            A floating strip of live video in the corner of your screen.
+            One tile per person. Hold the mic to talk. No accounts, no calls
+            to start — just open it.
+          </p>
+
+          {/* Buttons */}
+          <div
+            style={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: 12,
+              justifyContent: "center",
+              opacity: heroReady ? 1 : 0,
+              transform: heroReady ? "translateY(0)" : "translateY(16px)",
+              transition: "opacity 0.8s ease, transform 0.8s cubic-bezier(0.16,1,0.3,1)",
+              transitionDelay: "0.7s",
+            }}
+          >
+            <a
+              href="https://github.com/eliaspfeffer/faceroom/releases/latest/download/Faceroom.zip"
+              className="btn-primary"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Download for Mac
+            </a>
+            <a
+              href="https://github.com/eliaspfeffer/faceroom-electron/releases/latest"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+              style={{ cursor: "pointer" }}
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Download for Windows
+            </a>
           </div>
         </div>
       </section>

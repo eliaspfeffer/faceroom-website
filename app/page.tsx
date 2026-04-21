@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const AVATARS = [
@@ -548,7 +549,13 @@ export default function Page() {
               </svg>
               Download for Mac
             </a>
-            <span className="btn-secondary">
+            <a
+              href="https://github.com/eliaspfeffer/faceroom-electron/releases/latest"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+              style={{ cursor: "pointer" }}
+            >
               <svg
                 width="16"
                 height="16"
@@ -558,17 +565,18 @@ export default function Page() {
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                style={{ opacity: 0.5 }}
               >
-                <rect x="2" y="3" width="20" height="14" rx="2" />
-                <path d="M8 21h8M12 17v4" />
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              <span>Windows — coming soon</span>
-            </span>
+              <span>Download for Windows</span>
+            </a>
           </div>
 
-          {/* Floating bar mockup */}
+          {/* Screenshot preview */}
           <div
+            className="bar-float"
             style={{
               display: "flex",
               justifyContent: "center",
@@ -578,92 +586,42 @@ export default function Page() {
               transitionDelay: "0.7s",
             }}
           >
-            {/* Simulated desktop context */}
             <div
               style={{
                 position: "relative",
-                width: "min(560px, 100%)",
-                aspectRatio: "16 / 9",
-                borderRadius: 16,
+                borderRadius: 20,
                 overflow: "hidden",
-                border: "1px solid rgba(255,255,255,0.07)",
-                background: "rgba(20,20,26,0.6)",
-                boxShadow: "0 32px 80px rgba(0,0,0,0.6)",
+                boxShadow:
+                  "0 0 0 1px rgba(255,255,255,0.1), 0 32px 80px rgba(0,0,0,0.7), 0 8px 24px rgba(0,0,0,0.5)",
               }}
             >
-              {/* Fake desktop content — blurred abstract shapes */}
-              <div
+              <Image
+                src="/screenshot.png"
+                alt="Faceroom — floating video strip with four people"
+                width={560}
+                height={160}
+                priority
                 style={{
-                  position: "absolute",
-                  inset: 0,
-                  background: `
-                    radial-gradient(ellipse 50% 40% at 30% 40%, rgba(124,158,245,0.08) 0%, transparent 70%),
-                    radial-gradient(ellipse 40% 50% at 70% 60%, rgba(213,124,245,0.07) 0%, transparent 70%),
-                    linear-gradient(135deg, rgba(20,20,28,1) 0%, rgba(14,14,18,1) 100%)
-                  `,
+                  display: "block",
+                  maxWidth: "min(560px, 90vw)",
+                  height: "auto",
+                  borderRadius: 20,
                 }}
               />
-              {/* Fake code lines */}
+              {/* Subtle glow beneath */}
               <div
                 style={{
                   position: "absolute",
-                  top: "20%",
-                  left: "8%",
-                  right: "8%",
-                  display: "flex",
-                  flexDirection: "column",
-                  gap: 10,
-                  opacity: 0.2,
+                  bottom: -24,
+                  left: "10%",
+                  right: "10%",
+                  height: 40,
+                  background: "rgba(232,168,124,0.15)",
+                  filter: "blur(20px)",
+                  borderRadius: "50%",
+                  pointerEvents: "none",
                 }}
-              >
-                {[80, 60, 90, 50, 70, 45, 65].map((w, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      height: 8,
-                      width: `${w}%`,
-                      background: "rgba(255,255,255,0.4)",
-                      borderRadius: 4,
-                      marginLeft: i % 3 === 1 ? "5%" : 0,
-                    }}
-                  />
-                ))}
-              </div>
-
-              {/* The actual floating bar */}
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: 16,
-                  left: 16,
-                }}
-              >
-                <FloatingBarMockup />
-              </div>
-
-              {/* Window chrome dots */}
-              <div
-                style={{
-                  position: "absolute",
-                  top: 12,
-                  left: 14,
-                  display: "flex",
-                  gap: 6,
-                }}
-              >
-                {["#FF5F57", "#FEBC2E", "#28C840"].map((c, i) => (
-                  <div
-                    key={i}
-                    style={{
-                      width: 10,
-                      height: 10,
-                      borderRadius: "50%",
-                      background: c,
-                      opacity: 0.7,
-                    }}
-                  />
-                ))}
-              </div>
+              />
             </div>
           </div>
         </div>

@@ -464,7 +464,7 @@ export default function Page() {
                 textTransform: "uppercase",
               }}
             >
-              Live video, zero friction
+              Remote work, less lonely
             </span>
           </div>
 
@@ -562,9 +562,10 @@ export default function Page() {
               transitionDelay: "0.55s",
             }}
           >
-            A floating strip of live video in the corner of your screen.
-            One tile per person. Hold the mic to talk. No accounts, no calls
-            to start — just open it.
+            Working alone doesn&apos;t have to feel lonely. Faceroom puts a
+            tiny floating video strip in the corner of your screen — one tile
+            per person. Hold the mic to talk. No accounts, no calls to start,
+            just open it.
           </p>
 
           {/* Buttons */}
@@ -641,7 +642,9 @@ export default function Page() {
               lineHeight: 1.1,
             }}
           >
-            Three seconds to presence.
+            From lonely to connected
+            <br />
+            <em style={{ fontStyle: "italic", color: "var(--accent)" }}>in three seconds.</em>
           </h2>
         </div>
 
@@ -716,10 +719,10 @@ export default function Page() {
               lineHeight: 1.1,
             }}
           >
-            Built for the way
+            Built for remote workers
             <br />
             <em style={{ fontStyle: "italic", color: "var(--accent)" }}>
-              people actually work.
+              who miss their people.
             </em>
           </h2>
         </div>
@@ -739,7 +742,7 @@ export default function Page() {
               </svg>
             }
             title="No accounts"
-            description="Open and you're in. No email, no sign-up, no password. Privacy by design."
+            description="Open and you're in. No email, no sign-up, no password. Share the app with a friend and you're instantly together."
             delay={0}
           />
           <FeatureCard
@@ -772,7 +775,7 @@ export default function Page() {
               </svg>
             }
             title="Always on top"
-            description="The bar floats above everything — your code, your docs, your browser. Always visible, never intrusive."
+            description="The bar floats above everything — your code, your docs, your browser. A constant reminder that you're not working alone."
             delay={0.3}
           />
         </div>
@@ -807,7 +810,7 @@ export default function Page() {
             lineHeight: 1.15,
           }}
         >
-          Your team is one download away.
+          Stop working alone.
         </div>
         <p
           style={{
@@ -817,7 +820,7 @@ export default function Page() {
             fontWeight: 300,
           }}
         >
-          Free and open source. MIT license.
+          Send it to a friend and open it together. Free and open source.
         </p>
         <div
           style={{

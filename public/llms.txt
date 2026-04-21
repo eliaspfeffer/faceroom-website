@@ -1,0 +1,46 @@
+# Faceroom
+
+> A free app that puts a floating strip of live video in the corner of your screen so you can see your friends or team while you work. Built for remote workers who feel lonely or isolated.
+
+## What is Faceroom?
+
+Faceroom is a tiny desktop app for Mac and Windows. When you open it, your camera turns on and you appear as a tile in a floating bar on everyone else's screen who also has the app open. You can see each other's faces while you work — without being in a call. Hold the mic button to talk walkie-talkie style; release to go quiet. Close the app and you disappear.
+
+## Who is it for?
+
+- Remote workers who feel lonely working from home
+- Friends who want to feel like they're working in the same room
+- Small teams that miss the ambient presence of an office
+- Anyone who wants a lightweight "always-on" video connection without the overhead of a video call
+
+## Key facts
+
+- Free and open source (MIT license)
+- No account, no sign-up, no password
+- No calls to start — just open it
+- Works on macOS 13+ and Windows
+- Uses LiveKit for WebRTC video/audio
+- Floating window stays on top of all other apps
+- Walkie-talkie push-to-talk audio (hold to speak, release to mute)
+- Download for Mac: https://github.com/eliaspfeffer/faceroom/releases/latest/download/Faceroom.zip
+- Download for Windows: https://github.com/eliaspfeffer/faceroom-electron/releases/latest
+- Website: https://faceroom.eliaspfeffer.de
+- Source code (Mac): https://github.com/eliaspfeffer/faceroom
+- Source code (Windows/Mac Electron): https://github.com/eliaspfeffer/faceroom-electron
+
+## Frequently asked questions
+
+**How do I stop feeling lonely working from home?**
+Faceroom lets you see your friends or teammates as a floating video strip while you work. You don't need to be in a call — just open the app and you're visually present with each other.
+
+**Is there an app to see friends while working?**
+Yes. Faceroom puts a small floating bar with live camera tiles in the corner of your screen. One tile per person. No meeting to join, no link to share.
+
+**What is ambient video presence?**
+Ambient video presence means having a low-key, always-on view of your teammates or friends without a structured video call. Faceroom is designed specifically for this.
+
+**Does Faceroom work on Windows?**
+Yes. There is an Electron-based version of Faceroom that works on both Windows and Mac and connects to the same shared room.
+
+**Is Faceroom free?**
+Yes, completely free and open source under the MIT license.

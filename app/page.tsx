@@ -582,7 +582,7 @@ export default function Page() {
             }}
           >
             <a
-              href="https://github.com/eliaspfeffer/faceroom/releases/latest/download/Faceroom.dmg"
+              href="https://github.com/eliaspfeffer/faceroom-releases/releases/latest/download/Faceroom.dmg"
               className="btn-primary"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -593,7 +593,7 @@ export default function Page() {
               Download for Mac
             </a>
             <a
-              href="https://github.com/eliaspfeffer/faceroom-electron/releases/latest"
+              href="https://github.com/eliaspfeffer/faceroom-releases/releases/latest"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-secondary"
@@ -604,7 +604,7 @@ export default function Page() {
                 <polyline points="7 10 12 15 17 10" />
                 <line x1="12" y1="15" x2="12" y2="3" />
               </svg>
-              Download for Windows
+              Windows — coming soon
             </a>
           </div>
         </div>
@@ -831,7 +831,7 @@ export default function Page() {
           }}
         >
           <a
-            href="https://github.com/eliaspfeffer/faceroom/releases/latest/download/Faceroom.dmg"
+            href="https://github.com/eliaspfeffer/faceroom-releases/releases/latest/download/Faceroom.dmg"
             className="btn-primary"
           >
             <svg

@@ -449,7 +449,7 @@ export default function Pricing() {
             <FeatureLi>
               Persistent named rooms with shareable invite links
             </FeatureLi>
-            <FeatureLi>Up to {TEAM_ROOM_CAP} per room</FeatureLi>
+            <FeatureLi>Up to {TEAM_ROOM_CAP} people per room</FeatureLi>
             <FeatureLi>14-day trial, card required</FeatureLi>
             <FeatureLi>Priority support</FeatureLi>
           </ul>

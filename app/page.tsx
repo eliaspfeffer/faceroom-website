@@ -3,152 +3,6 @@
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
-const AVATARS = [
-  { color: "#7C9EF5", initials: "E", delay: 0 },
-  { color: "#F59E7C", initials: "S", delay: 0.4 },
-  { color: "#7CF5C0", initials: "M", delay: 0.8 },
-  { color: "#D17CF5", initials: "A", delay: 1.2 },
-];
-
-function FloatingBarMockup() {
-  const [visible, setVisible] = useState([false, false, false, false]);
-
-  useEffect(() => {
-    const timers = AVATARS.map((a, i) =>
-      setTimeout(() => {
-        setVisible((v) => {
-          const next = [...v];
-          next[i] = true;
-          return next;
-        });
-      }, 600 + a.delay * 1000)
-    );
-    return () => timers.forEach(clearTimeout);
-  }, []);
-
-  return (
-    <div
-      className="bar-float"
-      style={{
-        display: "inline-flex",
-        alignItems: "center",
-        gap: 0,
-        padding: "10px 12px",
-        background: "rgba(20,20,24,0.85)",
-        backdropFilter: "blur(24px)",
-        WebkitBackdropFilter: "blur(24px)",
-        borderRadius: 22,
-        border: "1px solid rgba(255,255,255,0.1)",
-        boxShadow:
-          "0 24px 64px rgba(0,0,0,0.7), 0 0 0 1px rgba(255,255,255,0.04) inset",
-        position: "relative",
-      }}
-    >
-      {/* Desktop blur context — simulated behind */}
-      <div
-        style={{
-          position: "absolute",
-          inset: -1,
-          borderRadius: 23,
-          background:
-            "linear-gradient(135deg, rgba(232,168,124,0.06) 0%, transparent 60%)",
-          pointerEvents: "none",
-        }}
-      />
-
-      <div style={{ display: "flex", gap: 8, alignItems: "center" }}>
-        {AVATARS.map((avatar, i) => (
-          <div
-            key={i}
-            style={{
-              width: 72,
-              height: 54,
-              borderRadius: 12,
-              background: visible[i]
-                ? `linear-gradient(135deg, ${avatar.color}33, ${avatar.color}18)`
-                : "rgba(255,255,255,0.04)",
-              border: `1px solid ${visible[i] ? avatar.color + "40" : "rgba(255,255,255,0.07)"}`,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              transition: "all 0.5s cubic-bezier(0.16,1,0.3,1)",
-              opacity: visible[i] ? 1 : 0,
-              transform: visible[i] ? "scale(1)" : "scale(0.7)",
-              position: "relative",
-              overflow: "hidden",
-            }}
-          >
-            {visible[i] && (
-              <>
-                <span
-                  style={{
-                    fontFamily: "'DM Sans', sans-serif",
-                    fontWeight: 500,
-                    fontSize: 18,
-                    color: avatar.color,
-                    opacity: 0.9,
-                    letterSpacing: "-0.02em",
-                  }}
-                >
-                  {avatar.initials}
-                </span>
-                {/* Live indicator */}
-                <div
-                  style={{
-                    position: "absolute",
-                    bottom: 5,
-                    right: 5,
-                    width: 6,
-                    height: 6,
-                    borderRadius: "50%",
-                    background: "#4ade80",
-                    animation: "statusBlink 2s ease-in-out infinite",
-                    animationDelay: `${i * 0.3}s`,
-                    boxShadow: "0 0 6px #4ade80",
-                  }}
-                />
-              </>
-            )}
-          </div>
-        ))}
-
-        {/* PTT Button */}
-        <div
-          style={{
-            marginLeft: 6,
-            width: 48,
-            height: 48,
-            borderRadius: "50%",
-            background: "rgba(255,255,255,0.08)",
-            border: "1px solid rgba(255,255,255,0.12)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            position: "relative",
-            flexShrink: 0,
-          }}
-        >
-          <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="rgba(240,237,232,0.5)"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          >
-            <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z" />
-            <path d="M19 10v2a7 7 0 0 1-14 0v-2" />
-            <line x1="12" y1="19" x2="12" y2="23" />
-            <line x1="8" y1="23" x2="16" y2="23" />
-          </svg>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function FeatureCard({
   icon,
   title,
@@ -562,10 +416,9 @@ export default function Page() {
               transitionDelay: "0.55s",
             }}
           >
-            Working alone doesn&apos;t have to feel lonely. Faceroom puts a
-            tiny floating video strip in the corner of your screen — one tile
-            per person. Hold the mic to talk. No accounts, no calls to start,
-            just open it.
+            A tiny floating video strip in the corner of your screen — one
+            tile per person. Hold the mic to talk. No accounts, no calls to
+            start, just open it.
           </p>
 
           {/* Buttons */}

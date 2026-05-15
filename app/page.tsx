@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import Pricing from "./Pricing";
 
 const AVATARS = [
@@ -154,40 +154,17 @@ function FeatureCard({
   icon,
   title,
   description,
-  delay = 0,
 }: {
   icon: React.ReactNode;
   title: string;
   description: string;
-  delay?: number;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setTimeout(() => setVisible(true), delay * 1000);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [delay]);
-
   return (
     <div
-      ref={ref}
       className="glass-card"
       style={{
         borderRadius: 16,
         padding: "28px 28px",
-        transition: "all 0.6s cubic-bezier(0.16,1,0.3,1)",
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(20px)",
       }}
     >
       <div
@@ -234,42 +211,19 @@ function StepItem({
   number,
   title,
   description,
-  delay = 0,
 }: {
   number: string;
   title: string;
   description: string;
-  delay?: number;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([e]) => {
-        if (e.isIntersecting) {
-          setTimeout(() => setVisible(true), delay * 1000);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.1 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [delay]);
-
   return (
     <div
-      ref={ref}
       style={{
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
         textAlign: "center",
         gap: 20,
-        transition: "all 0.7s cubic-bezier(0.16,1,0.3,1)",
-        opacity: visible ? 1 : 0,
-        transform: visible ? "translateY(0)" : "translateY(24px)",
       }}
     >
       <div
@@ -648,20 +602,31 @@ export default function Page() {
               </svg>
               Download for Mac
             </a>
-            <a
-              href="https://github.com/eliaspfeffer/faceroom-electron/releases/latest"
-              target="_blank"
-              rel="noopener noreferrer"
+            <span
               className="btn-secondary"
-              style={{ cursor: "pointer" }}
+              title="Windows build is in progress. Faceroom is macOS-only today."
+              style={{ cursor: "default", opacity: 0.7 }}
             >
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
-                <polyline points="7 10 12 15 17 10" />
-                <line x1="12" y1="15" x2="12" y2="3" />
+              <svg width="16" height="16" viewBox="0 0 88 88" fill="currentColor" aria-hidden="true">
+                <path d="M0 12.4L35.7 7.5v34.5H0zM40 6.9L87.3 0v42H40zM0 46h35.7v34.5L0 75.6zM40 46.5h47.3V88L40 81.1z" />
               </svg>
-              Download for Windows
-            </a>
+              Windows
+              <span
+                style={{
+                  padding: "2px 6px",
+                  fontSize: 10,
+                  letterSpacing: "0.04em",
+                  textTransform: "uppercase",
+                  color: "var(--accent)",
+                  background: "var(--accent-dim)",
+                  border: "1px solid rgba(232,168,124,0.25)",
+                  borderRadius: 6,
+                  fontWeight: 500,
+                }}
+              >
+                Soon
+              </span>
+            </span>
           </div>
         </div>
       </section>
@@ -716,19 +681,16 @@ export default function Page() {
             number="1"
             title="Open the app"
             description="Launch Faceroom. Your camera turns on automatically. No setup, no sign-in screen."
-            delay={0}
           />
           <StepItem
             number="2"
             title="You appear instantly"
             description="Your tile shows up in everyone else's floating bar. They see you; you see them."
-            delay={0.15}
           />
           <StepItem
             number="3"
             title="Hold to talk"
             description="Press and hold the mic button for walkie-talkie audio. Release to go quiet again."
-            delay={0.3}
           />
         </div>
       </section>
@@ -799,7 +761,6 @@ export default function Page() {
             }
             title="No accounts"
             description="Open and you're in. No email, no sign-up, no password. Share the app with a friend and you're instantly together."
-            delay={0}
           />
           <FeatureCard
             icon={
@@ -810,7 +771,6 @@ export default function Page() {
             }
             title="Zero setup"
             description="Download, open, done. The whole setup is exactly that long."
-            delay={0.1}
           />
           <FeatureCard
             icon={
@@ -821,7 +781,6 @@ export default function Page() {
             }
             title="Walkie-talkie audio"
             description="Hold to talk. Everyone else stays muted. Perfect for quick questions without interrupting flow."
-            delay={0.2}
           />
           <FeatureCard
             icon={
@@ -832,7 +791,6 @@ export default function Page() {
             }
             title="Always on top"
             description="The bar floats above everything — your code, your docs, your browser. A constant reminder that you're not working alone."
-            delay={0.3}
           />
         </div>
       </section>

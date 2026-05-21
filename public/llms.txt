@@ -22,7 +22,7 @@ Faceroom is a tiny desktop app for Mac and Windows. When you open it, your camer
 - Uses LiveKit for WebRTC video/audio
 - Floating window stays on top of all other apps
 - Walkie-talkie push-to-talk audio (hold to speak, release to mute)
-- Download for Mac: https://github.com/eliaspfeffer/faceroom/releases/latest/download/Faceroom.zip
+- Download for Mac: https://github.com/eliaspfeffer/faceroom-releases/releases/latest/download/Faceroom.dmg
 - Download for Windows: https://github.com/eliaspfeffer/faceroom-electron/releases/latest
 - Website: https://faceroom.eliaspfeffer.de
 - Source code (Mac): https://github.com/eliaspfeffer/faceroom

@@ -592,7 +592,7 @@ export default function Page() {
             }}
           >
             <a
-              href="https://github.com/eliaspfeffer/faceroom/releases/latest/download/Faceroom.dmg"
+              href="https://github.com/eliaspfeffer/faceroom-releases/releases/latest/download/Faceroom.dmg"
               className="btn-primary"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -859,7 +859,7 @@ export default function Page() {
           }}
         >
           <a
-            href="https://github.com/eliaspfeffer/faceroom/releases/latest/download/Faceroom.dmg"
+            href="https://github.com/eliaspfeffer/faceroom-releases/releases/latest/download/Faceroom.dmg"
             className="btn-primary"
           >
             <svg

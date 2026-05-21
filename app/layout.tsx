@@ -146,7 +146,7 @@ export default function RootLayout({
                 "A floating strip of live video in the corner of your screen. See your friends or team while you work. Perfect for remote workers who feel lonely or isolated working from home.",
               url: "https://faceroom.eliaspfeffer.de",
               downloadUrl:
-                "https://github.com/eliaspfeffer/faceroom/releases/latest/download/Faceroom.zip",
+                "https://github.com/eliaspfeffer/faceroom-releases/releases/latest/download/Faceroom.dmg",
               softwareVersion: "1.0",
               author: {
                 "@type": "Person",
